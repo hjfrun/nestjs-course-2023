@@ -4,6 +4,8 @@ import { AppController } from './app.controller'
 import { User } from './user/entity/user.entity'
 import { UserModule } from './user/user.module'
 import { AuthModule } from './auth/auth.module';
+import { ProfileController } from './profile/profile.controller';
+import { ProfileModule } from './profile/profile.module';
 
 @Module({
   imports: [
@@ -21,8 +23,9 @@ import { AuthModule } from './auth/auth.module';
         trustServerCertificate: true
       }
     }),
-    AuthModule
+    AuthModule,
+    ProfileModule
   ],
-  controllers: [AppController]
+  controllers: [AppController, ProfileController]
 })
 export class AppModule {}
